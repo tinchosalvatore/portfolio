@@ -241,3 +241,44 @@ footer {
     color: var(--subtext); 
     padding-bottom: 2rem;
 }
+
+/* --- LISTA DE BENEFICIOS MEJORADA --- */
+.benefits-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-top: 2.5rem;
+    margin-bottom: 1.2rem; /* Un poco más de espacio antes de la lista */
+    color: var(--accent);  /* Título en color verde/violeta */
+}
+
+.benefits-list {
+    list-style: none; /* IMPORTANTE: Esto borra los puntos negros feos */
+    padding: 0;       /* Elimina la sangría exagerada de la izquierda */
+    margin: 0 0 2.5rem 0; /* Margen abajo para separar del botón verde */
+}
+
+.benefits-list li {
+    display: flex; 
+    align-items: flex-start; /* Alinea arriba por si el texto ocupa 2 líneas */
+    margin-bottom: 0.8rem;
+    font-size: 1.05rem;
+    color: var(--text);
+}
+
+.check-icon {
+    /* Diseño del circulito del check */
+    color: white;             /* Check blanco */
+    background: var(--accent); /* Fondo verde/violeta */
+    
+    font-weight: bold;
+    min-width: 24px;   /* Tamaño fijo para que no se aplaste */
+    height: 24px;
+    border-radius: 50%; /* Lo hace perfectamente redondo */
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px; /* Espacio entre el icono y el texto */
+    font-size: 0.9rem;  /* Tamaño del símbolo ✓ */
+    margin-top: 3px;    /* Pequeño ajuste para alinearlo con el texto */
+}
