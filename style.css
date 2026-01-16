@@ -282,3 +282,156 @@ footer {
     font-size: 0.9rem;  /* Tamaño del símbolo ✓ */
     margin-top: 3px;    /* Pequeño ajuste para alinearlo con el texto */
 }
+
+/* --- ESTILOS PARA PÁGINAS DE DETALLE DE PROYECTO --- */
+
+/* Botón de volver flotante o superior */
+.back-nav {
+    margin-bottom: 2rem;
+}
+
+.back-link {
+    text-decoration: none;
+    color: var(--subtext);
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    transition: color 0.2s ease;
+}
+
+.back-link:hover {
+    color: var(--accent);
+}
+
+/* Contenedor de la Galería (Grid Responsive) */
+.gallery-grid {
+    display: grid;
+    /* Esto crea columnas automáticas. Si la pantalla es chica, 1 columna. Si es grande, 2. */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
+    gap: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+/* Estilo de cada imagen */
+.gallery-item {
+    background: var(--card-bg);
+    padding: 1rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 6px var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px); /* Efecto de "levantar" la foto */
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+}
+
+.gallery-caption {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: var(--subtext);
+    text-align: center;
+    font-weight: 500;
+}
+
+/* Bloque de características extra */
+.feature-list {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent);
+    margin-top: 2rem;
+}
+
+
+/* --- SECCIÓN DE VIDEO DEMO --- */
+.video-section {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* Mágica proporción 16:9 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px var(--shadow);
+    border: 1px solid var(--border);
+    background: #000; /* Fondo negro mientras carga */
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+
+/* --- LIGHTBOX (VISOR DE IMÁGENES) --- */
+.lightbox {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 9999; /* Por encima de todo */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Fondo negro semitransparente */
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.lightbox.active {
+    display: flex; /* Se muestra al activar */
+    opacity: 1;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.lightbox.active .lightbox-content {
+    transform: scale(1); /* Efecto zoom suave al abrir */
+}
+
+/* Cursor de lupa para indicar que se puede ampliar */
+.gallery-item img {
+    cursor: zoom-in;
+}
+
+/* Botón de cerrar (X) */
+.close-lightbox {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+    z-index: 10000;
+}
+
+.close-lightbox:hover {
+    color: var(--accent);
+}
